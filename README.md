@@ -7,4 +7,4 @@ This example uses JDK 8 or superior
 
 ### Support or Contact
 
-This code is provide as-is... also you can contact me in this repository or in dev@cazucito.com
+This code is provided as-is... but you can contact me in this repository or in dev@cazucito.com
