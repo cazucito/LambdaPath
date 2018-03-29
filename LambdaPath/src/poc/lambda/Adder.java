@@ -1,5 +1,8 @@
 package poc.lambda;
 
+import poc.util.Impresor;
+import poc.util.TipoMensajes;
+
 /**
  * Add and print two ints
  *
@@ -17,6 +20,6 @@ public class Adder implements ArithmeticCalculator {
     public void doOperation(int in1, int in2) {
         int result = 0;
         result = in1 + in2;
-        System.out.println("\tResult (" + in1 + " + " + in2 + ") = " + result);
+        Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Result (" + in1 + " + " + in2 + ") = " + result);
     }
 }
