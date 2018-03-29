@@ -1,5 +1,8 @@
 package poc.lambda.es;
 
+import poc.util.Impresor;
+import poc.util.TipoMensajes;
+
 /**
  * Resta e imprime un entero de otro
  *
@@ -16,6 +19,6 @@ public class RestadoraSinInterfaz {
     public void resta(int in1, int in2) {
         int resultado;
         resultado = in1 - in2;
-        System.out.println("\tResultado (" + in1 + " - " + in2 + ") = " + resultado);
+        Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Resultado (" + in1 + " - " + in2 + ") = " + resultado);
     }
 }

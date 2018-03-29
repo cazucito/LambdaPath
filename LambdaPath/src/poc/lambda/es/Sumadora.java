@@ -1,5 +1,8 @@
 package poc.lambda.es;
 
+import poc.util.Impresor;
+import poc.util.TipoMensajes;
+
 /**
  * Suma e imprime dos enteros
  *
@@ -17,6 +20,6 @@ public class Sumadora implements CalculadoraAritmetica {
     public void hazOperacion(int in1, int in2) {
         int resultado = 0;
         resultado = in1 + in2;
-        System.out.println("\tResultado (" + in1 + " + " + in2 + ") = " + resultado);
+        Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Resultado (" + in1 + " + " + in2 + ") = " + resultado);
     }
 }
