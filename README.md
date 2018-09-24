@@ -1,6 +1,7 @@
 # BIENVENIDO AL PROYECYO RUTA LAMBDA
 
 A possible explaination about create and use of lambda expresions.
+Una posible explicación de como crear y utilizar expresiones lambda.
 
 ## INICIANDO
 
@@ -45,7 +46,7 @@ Versión 0.1a
 
 * **Pedro Cazu** - *Trabajo inicial* - [cazucito] (https://github.com/cazucito/)
 
-Ver lista de [contribuyentes] (https://github.com/cazucito/thread-safe-collections/contributors) que participan en este proyecto.
+Ver lista de [contribuyentes] que participan en este proyecto.
 
 ## LICENCIA
 
