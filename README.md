@@ -1,4 +1,4 @@
-# BIENVENIDO AL PROYECYO RUTA LAMBDA
+# BIENVENIDO AL PROYECTO RUTA LAMBDA
 
 A possible explaination about create and use of lambda expresions.
 Una posible explicación de como crear y utilizar expresiones lambda.
