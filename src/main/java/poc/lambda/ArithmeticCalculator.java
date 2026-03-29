@@ -1,6 +1,7 @@
 package poc.lambda;
 
 /**
+ * Interfaz funcional que modela una operación aritmética genérica con dos operandos.
  *
  * @author cazucito
  */
@@ -8,11 +9,11 @@ package poc.lambda;
 public interface ArithmeticCalculator {
 
     /**
-     * Model a generic arithmetic operation with two operands
+     * Ejecuta una operación aritmética genérica con dos operandos enteros.
      *
-     * @param in1 input operand
-     * @param in2 input operand
-     * @return result of the arithmetic operation
+     * @param in1 primer operando
+     * @param in2 segundo operando
+     * @return resultado de la operación aritmética
      */
     int doOperation(int in1, int in2);
 }

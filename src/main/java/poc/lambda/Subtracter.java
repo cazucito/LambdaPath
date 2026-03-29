@@ -4,15 +4,18 @@ import poc.util.Printer;
 import poc.util.MessageType;
 
 /**
- * Substrac and print a int from another
+ * Implementación de {@link ArithmeticCalculator} que resta dos enteros e imprime el resultado.
  *
  * @author cazucito
  */
 public class Subtracter implements ArithmeticCalculator {
-   /**
-     * Subtract and print two ints ( in1 - in2 )
-     * @param in1 param 1
-     * @param in2 param 2
+
+    /**
+     * Resta dos enteros, imprime el resultado y lo devuelve ( in1 - in2 ).
+     *
+     * @param in1 primer operando (minuendo)
+     * @param in2 segundo operando (sustraendo)
+     * @return resultado de la resta
      */
     @Override
     public int doOperation(int in1, int in2) {

@@ -4,17 +4,18 @@ import poc.util.Printer;
 import poc.util.MessageType;
 
 /**
- * Multiply and print two ints
+ * Implementación de {@link ArithmeticCalculator} que multiplica dos enteros e imprime el resultado.
  *
  * @author cazucito
  */
 public class Multiplyer implements ArithmeticCalculator {
 
     /**
-     * Multiply and print two ints ( in1 * in2 )
+     * Multiplica dos enteros, imprime el resultado y lo devuelve ( in1 * in2 ).
      *
-     * @param in1 param 1
-     * @param in2 param 2
+     * @param in1 primer factor
+     * @param in2 segundo factor
+     * @return resultado de la multiplicación
      */
     @Override
     public int doOperation(int in1, int in2) {

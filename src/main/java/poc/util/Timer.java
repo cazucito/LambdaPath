@@ -3,16 +3,16 @@ package poc.util;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * Utility class for time-related operations.
+ * Clase de utilidad para operaciones relacionadas con el tiempo.
  *
  * @author cazucito
  */
 public class Timer {
 
 	/**
-	 * Pauses the current thread for the given number of milliseconds.
+	 * Pausa el hilo actual durante el número de milisegundos indicado.
 	 *
-	 * @param milliseconds duration to pause
+	 * @param milliseconds duración de la pausa en milisegundos
 	 */
 	public static void pause(int milliseconds) {
 		try {
@@ -23,10 +23,10 @@ public class Timer {
 	}
 
 	/**
-	 * Pauses the current thread for a random duration within the given range.
+	 * Pausa el hilo actual durante un tiempo aleatorio dentro del rango indicado.
 	 *
-	 * @param msMin minimum milliseconds
-	 * @param msMax maximum milliseconds
+	 * @param msMin milisegundos mínimos de pausa
+	 * @param msMax milisegundos máximos de pausa
 	 */
 	public static void pause(int msMin, int msMax) {
 		try {

@@ -69,6 +69,11 @@ mvn exec:java -Dexec.mainClass="poc.lambda.es.RutaLambdaMain"
 - Implementations **print the result AND return it**
 - Tests go in `src/test/java/` mirroring the source package
 
+## Convención de idioma
+
+- **Código** (identificadores, nombres de clases, métodos, variables, constantes): **inglés**
+- **Documentación y comentarios** (Javadoc, comentarios inline, mensajes de commit): **español**
+
 ---
 
 ## Branching
