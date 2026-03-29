@@ -17,9 +17,9 @@ public class Adder implements ArithmeticCalculator {
      * @param in2 param 2
      */
     @Override
-    public void doOperation(int in1, int in2) {
-        int result = 0;
-        result = in1 + in2;
+    public int doOperation(int in1, int in2) {
+        int result = in1 + in2;
         Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Result (" + in1 + " + " + in2 + ") = " + result);
+        return result;
     }
 }

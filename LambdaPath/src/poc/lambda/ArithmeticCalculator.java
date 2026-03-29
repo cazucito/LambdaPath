@@ -12,6 +12,7 @@ public interface ArithmeticCalculator {
      *
      * @param in1 input operand
      * @param in2 input operand
+     * @return result of the arithmetic operation
      */
-    public abstract void doOperation(int in1, int in2);
+    int doOperation(int in1, int in2);
 }

@@ -16,9 +16,9 @@ public class RestadoraSinInterfaz {
      * @param in1 parámetro 1
      * @param in2 parámetro 2
      */
-    public void resta(int in1, int in2) {
-        int resultado;
-        resultado = in1 - in2;
+    public int resta(int in1, int in2) {
+        int resultado = in1 - in2;
         Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Resultado (" + in1 + " - " + in2 + ") = " + resultado);
+        return resultado;
     }
 }

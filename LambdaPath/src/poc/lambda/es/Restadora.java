@@ -15,9 +15,9 @@ public class Restadora implements CalculadoraAritmetica {
      * @param in2 parámetro 2
      */
     @Override
-    public void hazOperacion(int in1, int in2) {
-        int resultado;
-        resultado = in1 - in2;
+    public int hazOperacion(int in1, int in2) {
+        int resultado = in1 - in2;
         Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Resultado (" + in1 + " - " + in2 + ") = " + resultado);
+        return resultado;
     }
 }

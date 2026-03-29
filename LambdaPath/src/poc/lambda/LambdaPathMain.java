@@ -31,13 +31,13 @@ public class LambdaPathMain {
         genericRef022 = new Multiplyer();
         genericRef022.doOperation(a, b);
         //
-        Impresor.muestraEnConsola(TipoMensajes.TITULO, "[03] With interface");
+        Impresor.muestraEnConsola(TipoMensajes.TITULO, "[03] With anonymous inner class");
         ArithmeticCalculator genericRef03 = new ArithmeticCalculator() {
             @Override
-            public void doOperation(int in1, int in2) {
-                int result = 0;
-                result = in1 * in2;
+            public int doOperation(int in1, int in2) {
+                int result = in1 * in2;
                 Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Result (" + in1 + " * " + in2 + ") = " + result);
+                return result;
             }
 
         };
@@ -49,21 +49,27 @@ public class LambdaPathMain {
         OperationInvoker.invoke(a, b, new Subtracter());
         OperationInvoker.invoke(a, b, new ArithmeticCalculator() {
             @Override
-            public void doOperation(int in1, int in2) {
-                int result = 0;
-                result = in1 * in2;
+            public int doOperation(int in1, int in2) {
+                int result = in1 * in2;
                 Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Result (" + in1 + " * " + in2 + ") = " + result);
+                return result;
             }
         });
         //
         Impresor.muestraEnConsola(TipoMensajes.TITULO, "[05] With lambda expressions");
         OperationInvoker.invoke(a, b, (int in1, int in2) -> {
-            int result = 0;
-            result = in1 * in2;
+            int result = in1 * in2;
             Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Result (" + in1 + " * " + in2 + ") = " + result);
+            return result;
         });
-        OperationInvoker.invoke(a, b, (in1, in2) -> Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Result (" + in1 + " * " + in2 + ") = " + (in1 * in2)));
-        ArithmeticCalculator sub = (in1, in2) -> Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Result (" + in1 + " - " + in2 + ") = " + (in1 - in2));
+        OperationInvoker.invoke(a, b, (in1, in2) -> {
+            Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Result (" + in1 + " * " + in2 + ") = " + (in1 * in2));
+            return in1 * in2;
+        });
+        ArithmeticCalculator sub = (in1, in2) -> {
+            Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Result (" + in1 + " - " + in2 + ") = " + (in1 - in2));
+            return in1 - in2;
+        };
         OperationInvoker.invoke(a, b, sub);
         OperationInvoker.invoke(a, b, sub);
         Impresor.muestraEnConsola(TipoMensajes.PIE, "");
