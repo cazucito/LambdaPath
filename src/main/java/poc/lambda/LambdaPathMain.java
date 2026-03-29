@@ -4,8 +4,9 @@ import poc.util.Printer;
 import poc.util.MessageType;
 
 /**
- * Main flow about a possible route from individual and unrelated classes to
- * lambda expressions
+ * Punto de entrada principal del tutorial LambdaPath.
+ * Muestra la evolución del código Java desde clases independientes sin interfaz
+ * hasta expresiones lambda, pasando por cinco etapas progresivas.
  *
  * @author cazucito
  */

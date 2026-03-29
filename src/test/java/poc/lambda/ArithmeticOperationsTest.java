@@ -10,7 +10,7 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Unit tests for EN arithmetic operation classes.
+ * Pruebas unitarias para las clases de operaciones aritméticas.
  */
 class ArithmeticOperationsTest {
 
@@ -27,7 +27,7 @@ class ArithmeticOperationsTest {
         System.setOut(originalOut);
     }
 
-    // --- Adder ---
+    // --- Adder (suma con interfaz) ---
 
     @Test
     void adderSumsPositives() {
@@ -44,7 +44,7 @@ class ArithmeticOperationsTest {
         assertEquals(-3, new Adder().doOperation(-6, 3));
     }
 
-    // --- Subtracter ---
+    // --- Subtracter (resta con interfaz) ---
 
     @Test
     void subtracterSubtractsPositives() {
@@ -61,7 +61,7 @@ class ArithmeticOperationsTest {
         assertEquals(6, new Subtracter().doOperation(6, 0));
     }
 
-    // --- Multiplyer ---
+    // --- Multiplyer (multiplicación con interfaz) ---
 
     @Test
     void multiplyerMultipliesPositives() {
@@ -78,21 +78,21 @@ class ArithmeticOperationsTest {
         assertEquals(18, new Multiplyer().doOperation(-6, -3));
     }
 
-    // --- AdderNoInterface ---
+    // --- AdderNoInterface (suma sin interfaz) ---
 
     @Test
     void adderNoInterfaceSums() {
         assertEquals(9, new AdderNoInterface().add(6, 3));
     }
 
-    // --- SubtracterNoInterface ---
+    // --- SubtracterNoInterface (resta sin interfaz) ---
 
     @Test
     void subtracterNoInterfaceSubtracts() {
         assertEquals(3, new SubtracterNoInterface().subtract(6, 3));
     }
 
-    // --- OperationInvoker with lambdas ---
+    // --- OperationInvoker (invocador con lambdas) ---
 
     @Test
     void invokerDelegatesAddition() {

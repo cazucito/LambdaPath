@@ -1,7 +1,7 @@
 package poc.util;
 
 /**
- * Message types for console output formatting.
+ * Tipos de mensaje disponibles para el formateo de la salida en consola.
  *
  * @author cazucito
  */

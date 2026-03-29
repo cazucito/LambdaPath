@@ -4,17 +4,18 @@ import poc.util.Printer;
 import poc.util.MessageType;
 
 /**
- * Add and print two ints
+ * Implementación de {@link ArithmeticCalculator} que suma dos enteros e imprime el resultado.
  *
  * @author cazucito
  */
 public class Adder implements ArithmeticCalculator {
 
     /**
-     * Add and print two ints ( in1 + in2 )
+     * Suma dos enteros, imprime el resultado y lo devuelve ( in1 + in2 ).
      *
-     * @param in1 param 1
-     * @param in2 param 2
+     * @param in1 primer operando
+     * @param in2 segundo operando
+     * @return resultado de la suma
      */
     @Override
     public int doOperation(int in1, int in2) {

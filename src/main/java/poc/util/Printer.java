@@ -10,7 +10,8 @@ import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * Utility class for formatted console output.
+ * Clase de utilidad para la salida formateada en consola.
+ * Cada tipo de mensaje definido en {@link MessageType} produce un formato visual distinto.
  *
  * @author cazucito
  */
@@ -30,32 +31,32 @@ public class Printer {
 	private static boolean debug = false;
 
 	/**
-	 * Enables debug output.
+	 * Activa la salida de mensajes de depuración.
 	 */
 	public static void enableDebug() {
 		Printer.debug = true;
 	}
 
 	/**
-	 * Disables debug output.
+	 * Desactiva la salida de mensajes de depuración.
 	 */
 	public static void disableDebug() {
 		Printer.debug = false;
 	}
 
 	/**
-	 * Returns whether debug mode is enabled.
+	 * Indica si el modo de depuración está activo.
 	 *
-	 * @return true if debug is enabled
+	 * @return {@code true} si la depuración está habilitada
 	 */
 	public static boolean isDebugEnabled() {
 		return debug;
 	}
 
 	/**
-	 * Prints a collection of strings.
+	 * Imprime en consola el contenido de una colección de cadenas.
 	 *
-	 * @param collection the collection to print
+	 * @param collection colección a imprimir
 	 */
 	public static void print(Collection<String> collection) {
 		StringBuilder sb = new StringBuilder();
@@ -74,9 +75,9 @@ public class Printer {
 	}
 
 	/**
-	 * Prints an Integer/String map.
+	 * Imprime en consola el contenido de un mapa Integer/String.
 	 *
-	 * @param map the map to print
+	 * @param map mapa a imprimir
 	 */
 	public static void print(Map<Integer, String> map) {
 		StringBuilder sb = new StringBuilder();
@@ -95,10 +96,10 @@ public class Printer {
 	}
 
 	/**
-	 * Prints a formatted message to the console.
+	 * Imprime un mensaje formateado en consola según el tipo indicado.
 	 *
-	 * @param type     message type
-	 * @param messages message content
+	 * @param type     tipo de mensaje que determina el formato visual
+	 * @param messages contenido del mensaje (uno o más fragmentos)
 	 */
 	public static void print(MessageType type, String... messages) {
 		String fmt = "";

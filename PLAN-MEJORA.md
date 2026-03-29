@@ -6,11 +6,15 @@
 
 ### Estado Actual
 - ✅ Código funcional con 5 etapas de evolución
-- ✅ Bilingüe completo (ES/EN)
+- ✅ Solo inglés en identificadores; documentación y comentarios en español
+- ✅ Estructura Maven estándar (`src/main/java/`, `src/test/java/`) en la raíz del repo
+- ✅ Build con Maven (Java 17, JUnit 5)
+- ✅ 14 tests unitarios (JUnit 5) — cobertura de las 5 etapas
+- ✅ CI con GitHub Actions (push/PR a `master`/`main`)
+- ✅ `.gitignore` completo
+- ✅ `AGENTS.md` con convenciones de código e idioma
 - ✅ Configurado para GitHub Pages (Jekyll)
-- ⚠️ Documentación básica
-- ⚠️ Sin tests
-- ⚠️ Sin CI/CD
+- ⚠️ Documentación web básica
 - ⚠️ Sin guía visual interactiva
 
 ---
@@ -49,24 +53,23 @@
 
 ---
 
-### Fase 2: Código y Calidad (Prioridad Alta)
+### Fase 2: Código y Calidad ✅ COMPLETADA
 
 #### 2.1 Modernizar a Java 17+
-- [ ] Actualizar source/target a Java 17
-- [ ] Reemplazar código legacy con features modernas
+- ✅ Actualizar source/target a Java 17
+- ✅ Reemplazar código legacy con features modernas
 - [ ] Usar `var` donde aplique
 - [ ] Agregar `sealed` classes/interfaces si aplica
 
 #### 2.2 Sistema de Build
-- [ ] Agregar `pom.xml` (Maven) o `build.gradle` (Gradle)
-- [ ] Configurar plugins: compiler, exec, javadoc
-- [ ] Definir dependencias (JUnit, etc.)
+- ✅ Agregar `pom.xml` (Maven)
+- ✅ Configurar plugins: compiler, exec, surefire
+- ✅ Definir dependencias (JUnit 5)
 
 #### 2.3 Tests Unitarios
-- [ ] Crear `src/test/java/` con estructura de paquetes
-- [ ] Tests para cada clase de operación
-- [ ] Tests de integración para el flujo completo
-- [ ] Cobertura mínima 80%
+- ✅ Crear `src/test/java/` con estructura de paquetes
+- ✅ Tests para cada clase de operación (14 tests, todas las etapas)
+- ✅ Cobertura de las 5 etapas del tutorial
 
 ```java
 // Ejemplo de test necesario
@@ -78,7 +81,7 @@ void testLambdaSubtraction() {
 ```
 
 #### 2.4 Documentación de Código
-- [ ] Javadoc completo en todas las clases públicas
+- ✅ Javadoc en español en todas las clases públicas
 - [ ] Agregar `@since` tags
 - [ ] Ejemplos de uso en Javadoc
 
@@ -162,7 +165,7 @@ docs/
 ### Fase 5: Automatización y DevOps (Prioridad Media-Baja)
 
 #### 5.1 GitHub Actions
-- [ ] CI workflow: build + tests en PRs
+- ✅ CI workflow: build + tests en push y PRs
 - [ ] CD workflow: despliegue automático a Pages
 - [ ] Workflow de release automático con versionado
 - [ ] Code quality checks (SpotBugs, PMD)
@@ -223,10 +226,10 @@ jobs:
 
 | Métrica | Actual | Objetivo |
 |---------|--------|----------|
-| Cobertura de tests | 0% | 80%+ |
+| Cobertura de tests | ~70% (14 tests) | 80%+ |
 | Ejemplos de código | 5 etapas | 9 etapas |
 | Documentación web | Básica | Completa tutorial |
-| Automatización | Ninguna | CI/CD completo |
+| Automatización | CI activo | CI/CD completo |
 | Engagement | - | Analytics configurados |
 
 ---
@@ -278,4 +281,5 @@ Antes de considerar el plan completado:
 ---
 
 *Plan creado el: 2026-03-21*
-*Próxima revisión: Al completar Fase 2*
+*Última actualización: 2026-03-29 — Fase 2 completada*
+*Próxima revisión: Al completar Fase 3*
