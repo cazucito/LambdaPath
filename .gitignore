@@ -8,9 +8,7 @@ target/
 bin/
 
 # NetBeans / Ant
-nbproject/private/
-nbproject/Makefile-*.mk
-nbproject/Package-*.bash
+nbproject/
 build/
 nbbuild/
 dist/
