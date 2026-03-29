@@ -31,13 +31,13 @@ public class RutaLambdaMain {
         refGeneric022 = new Multiplicadora();
         refGeneric022.hazOperacion(a, b);
         //
-        Impresor.muestraEnConsola(TipoMensajes.TITULO, "[03] Con Clases Internas");
+        Impresor.muestraEnConsola(TipoMensajes.TITULO, "[03] Con Clases Internas Anónimas");
         CalculadoraAritmetica refGenerica03 = new CalculadoraAritmetica() {
             @Override
-            public void hazOperacion(int in1, int in2) {
-                int resultado;
-                resultado = in1 * in2;
+            public int hazOperacion(int in1, int in2) {
+                int resultado = in1 * in2;
                 Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Resultado (" + in1 + " * " + in2 + ") = " + resultado);
+                return resultado;
             }
 
         };
@@ -49,21 +49,27 @@ public class RutaLambdaMain {
         InvocadorDeOperaciones.invoca(a, b, new Restadora());
         InvocadorDeOperaciones.invoca(a, b, new CalculadoraAritmetica() {
             @Override
-            public void hazOperacion(int in1, int in2) {
-                int resultado;
-                resultado = in1 * in2;
+            public int hazOperacion(int in1, int in2) {
+                int resultado = in1 * in2;
                 Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Resultado (" + in1 + " * " + in2 + ") = " + resultado);
+                return resultado;
             }
         });
         //
         Impresor.muestraEnConsola(TipoMensajes.TITULO, "[05] Con Expresiones Lambda");
         InvocadorDeOperaciones.invoca(a, b, (int in1, int in2) -> {
-            int resultado = 0;
-            resultado = in1 * in2;
+            int resultado = in1 * in2;
             Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Resultado (" + in1 + " * " + in2 + ") = " + resultado);
+            return resultado;
         });
-        InvocadorDeOperaciones.invoca(a, b, (in1, in2) -> Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Resultado (" + in1 + " * " + in2 + ") = " + (in1 * in2)));
-        CalculadoraAritmetica resta = (in1, in2) -> Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Resultado (" + in1 + " - " + in2 + ") = " + (in1 - in2));
+        InvocadorDeOperaciones.invoca(a, b, (in1, in2) -> {
+            Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Resultado (" + in1 + " * " + in2 + ") = " + (in1 * in2));
+            return in1 * in2;
+        });
+        CalculadoraAritmetica resta = (in1, in2) -> {
+            Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Resultado (" + in1 + " - " + in2 + ") = " + (in1 - in2));
+            return in1 - in2;
+        };
         InvocadorDeOperaciones.invoca(a, b, resta);
         InvocadorDeOperaciones.invoca(a, b, resta);
         Impresor.muestraEnConsola(TipoMensajes.PIE, "");

@@ -13,7 +13,7 @@ public class OperationInvoker {
      * @param in2
      * @param operation 
      */
-    public static void invoke(int in1, int in2, ArithmeticCalculator operation){
-        operation.doOperation(in1, in2);
+    public static int invoke(int in1, int in2, ArithmeticCalculator operation){
+        return operation.doOperation(in1, in2);
     }
 }

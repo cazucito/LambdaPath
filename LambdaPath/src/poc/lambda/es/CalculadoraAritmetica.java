@@ -12,6 +12,7 @@ public interface CalculadoraAritmetica {
      *
      * @param in1 operando de entrada 1
      * @param in2 operando de entrada 2
+     * @return resultado de la operación aritmética
      */
-    public abstract void hazOperacion(int in1, int in2);
+    int hazOperacion(int in1, int in2);
 }

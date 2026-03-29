@@ -21,7 +21,7 @@ public class InvocadorDeOperaciones {
      * @param in2 operando 2
      * @param operacion Operación a realizar
      */
-    public static void invoca(int in1, int in2, CalculadoraAritmetica operacion) {
-        operacion.hazOperacion(in1, in2);
+    public static int invoca(int in1, int in2, CalculadoraAritmetica operacion) {
+        return operacion.hazOperacion(in1, in2);
     }
 }
