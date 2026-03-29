@@ -1,1 +1,44 @@
+title: LambdaPath
+description: >-
+  Tutorial educativo que demuestra la evolución del código Java desde clases
+  tradicionales hasta expresiones lambda, en cinco etapas progresivas.
+author: cazucito
+url: "https://cazucito.github.io"
+baseurl: "/LambdaPath"
+lang: es
+
+# Tema Jekyll
 theme: jekyll-theme-time-machine
+
+# Metadatos del repositorio
+repository: cazucito/LambdaPath
+github_username: cazucito
+
+# Navegación principal
+nav:
+  - title: Inicio
+    url: /
+  - title: Etapas
+    url: /etapas/
+  - title: Contribuir
+    url: /contributing/
+
+# Build
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Excluir del build
+exclude:
+  - AGENTS.md
+  - PLAN-MEJORA.md
+  - CONTRIBUTING.md
+  - CODE_OF_CONDUCT.md
+  - pom.xml
+  - src/
+  - target/
+  - "*.iml"
+  - .idea/
+  - .vscode/
