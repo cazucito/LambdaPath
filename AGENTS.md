@@ -20,20 +20,23 @@ Cada etapa introduce un nuevo concepto:
 ## Estructura del repositorio
 
 ```
-LambdaPath/               ← raíz del repo
+LambdaPath/                        ← raíz del repo = raíz del proyecto Maven
+├── pom.xml                        ← build Maven (Java 17, JUnit 5)
+├── src/
+│   ├── main/java/poc/
+│   │   ├── lambda/                ← código EN (etapas 01-05)
+│   │   ├── lambda/es/             ← código ES (etapas 01-05)
+│   │   └── util/                  ← utilidades comunes (Impresor, Temporizador)
+│   └── test/java/poc/
+│       ├── lambda/                ← tests EN
+│       └── lambda/es/             ← tests ES
 ├── .github/
-│   └── workflows/ci.yml  ← CI: build + tests
-├── LambdaPath/           ← proyecto Java (Maven)
-│   ├── pom.xml
-│   └── src/
-│       ├── poc/lambda/   ← código EN
-│       ├── poc/lambda/es/← código ES
-│       └── poc/util/     ← utilidades comunes
-│       test/             ← tests JUnit 5
-├── AGENTS.md             ← este archivo
-├── PLAN-MEJORA.md        ← roadmap completo del proyecto
-├── README.md / LEEME.md  ← documentación
-└── _config.yml           ← GitHub Pages (Jekyll)
+│   └── workflows/ci.yml           ← CI: build + tests en push/PR
+├── docs/                          ← (futuro) GitHub Pages / Jekyll
+├── AGENTS.md                      ← este archivo
+├── PLAN-MEJORA.md                 ← roadmap completo del proyecto
+├── README.md / LEEME.md           ← documentación
+└── _config.yml                    ← GitHub Pages (Jekyll)
 ```
 
 ---
@@ -44,7 +47,6 @@ El proyecto usa **Maven** con Java 17.
 
 ```bash
 # Compilar
-cd LambdaPath
 mvn compile
 
 # Ejecutar tests
