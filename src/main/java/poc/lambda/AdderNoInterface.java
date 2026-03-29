@@ -1,7 +1,7 @@
 package poc.lambda;
 
-import poc.util.Impresor;
-import poc.util.TipoMensajes;
+import poc.util.Printer;
+import poc.util.MessageType;
 
 /**
  * Add and print two ints
@@ -17,7 +17,7 @@ public class AdderNoInterface {
      */
     public int add(int in1, int in2) {
         int result = in1 + in2;
-        Impresor.muestraEnConsola(TipoMensajes.MENSAJE, "Result (" + in1 + " + " + in2 + ") = " + result);
+        Printer.print(MessageType.MESSAGE, "Result (" + in1 + " + " + in2 + ") = " + result);
         return result;
     }
 }

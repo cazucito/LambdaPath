@@ -24,12 +24,10 @@ LambdaPath/                        ← raíz del repo = raíz del proyecto Maven
 ├── pom.xml                        ← build Maven (Java 17, JUnit 5)
 ├── src/
 │   ├── main/java/poc/
-│   │   ├── lambda/                ← código EN (etapas 01-05)
-│   │   ├── lambda/es/             ← código ES (etapas 01-05)
-│   │   └── util/                  ← utilidades comunes (Impresor, Temporizador)
+│   │   ├── lambda/                ← tutorial stages 01-05
+│   │   └── util/                  ← shared utilities (Printer, Timer, MessageType)
 │   └── test/java/poc/
-│       ├── lambda/                ← tests EN
-│       └── lambda/es/             ← tests ES
+│       └── lambda/                ← JUnit 5 tests
 ├── .github/
 │   └── workflows/ci.yml           ← CI: build + tests en push/PR
 ├── docs/                          ← (futuro) GitHub Pages / Jekyll
@@ -66,37 +64,34 @@ mvn exec:java -Dexec.mainClass="poc.lambda.es.RutaLambdaMain"
 
 ## Convenciones de código
 
-- **Java 17** — usar `var` donde mejore la legibilidad, evitar sintaxis innecesariamente verbosa
-- Los métodos de la interfaz `ArithmeticCalculator` / `CalculadoraAritmetica` **retornan `int`**
-- Las implementaciones **imprimen el resultado Y lo retornan**
-- Mantener paridad EN/ES: todo cambio en el paquete `poc.lambda` debe reflejarse en `poc.lambda.es`
-- Tests van en `src/test/java/` con el mismo paquete que la clase bajo prueba
+- **Java 17** — use `var` where it improves readability
+- `ArithmeticCalculator.doOperation()` **returns `int`** (not void) — do not revert this
+- Implementations **print the result AND return it**
+- Tests go in `src/test/java/` mirroring the source package
 
 ---
 
-## Ramas y flujo de trabajo
+## Branching
 
-- `master` — rama principal, siempre compilable y con tests verdes
-- Desarrollar en ramas de feature: `feature/<descripción>`
-- Nunca hacer push directo a `master`
-
----
-
-## Plan de mejora
-
-Ver `PLAN-MEJORA.md` para el roadmap completo por fases.
-
-Fases pendientes principales:
-- **Fase 3**: Etapas 06-09 (Method References, Streams, Functional Interfaces, benchmarks)
-- **Fase 4**: Sitio web con Jekyll en `docs/`
-- **Fase 5**: CI/CD completo, SemVer, CHANGELOG
-- **Fase 6**: Templates de issues, multimedia, i18n del sitio
+- `master` — always compiles, tests green
+- Feature branches: `feature/<description>`
+- Never push directly to `master`
 
 ---
 
-## Qué NO hacer
+## Roadmap
 
-- No eliminar la paridad EN/ES del código
-- No cambiar la interfaz `ArithmeticCalculator` a `void` (rompe los tests)
-- No commitear archivos compilados (`*.class`, `bin/`, `target/`)
-- No commitear archivos de IDE (`.classpath`, `.project`, `nbproject/`, `.idea/`)
+See `PLAN-MEJORA.md` for the full phased plan. Pending phases:
+
+- **Phase 3**: Stages 06-09 (Method References, Streams, Functional Interfaces, benchmarks)
+- **Phase 4**: GitHub Pages site in `docs/`
+- **Phase 5**: CI/CD, SemVer, CHANGELOG
+- **Phase 6**: Issue templates, multimedia
+
+---
+
+## Do NOT
+
+- Revert `ArithmeticCalculator.doOperation()` to `void` (breaks tests)
+- Commit compiled files (`*.class`, `bin/`, `target/`)
+- Commit IDE files (`.classpath`, `.project`, `nbproject/`, `.idea/`)
