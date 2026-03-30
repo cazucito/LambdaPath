@@ -89,29 +89,31 @@ void testLambdaSubtraction() {
 
 ---
 
-### Fase 3: Contenido Educativo Expandido (Prioridad Media)
+### Fase 3: Contenido Educativo Expandido ✅ COMPLETADA
 
 #### 3.1 Nuevas Etapas del Tutorial
-- [ ] **Etapa 06:** Method References (`Class::method`)
-- [ ] **Etapa 07:** Streams API (introducción)
-- [ ] **Etapa 08:** Functional Interfaces estándar (Predicate, Function, Consumer)
-- [ ] **Etapa 09:** Comparación de rendimiento
+- ✅ **Etapa 06:** Method References — 4 tipos, tests, doc
+- ✅ **Etapa 07:** Streams API — filter/map/reduce/count, tests, doc
+- ✅ **Etapa 08:** Functional Interfaces estándar — Predicate, Function, Consumer, Supplier, UnaryOperator, BinaryOperator, tests, doc
+- ✅ **Etapa 09:** Comparación de rendimiento — loop vs stream vs parallelStream, doc
+- ✅ `LambdaPathMain` actualizado con etapas 06-09
 
 #### 3.2 Comparativas Visuales
-- [ ] Diagrama de evolución (imagen SVG)
-- [ ] Tabla comparativa: LOC, complejidad, legibilidad
-- [ ] Benchmarks simples (tiempo de ejecución)
+- ✅ Diagrama de evolución con Mermaid.js (`docs/comparativas.md`)
+- ✅ Tabla comparativa: LOC, complejidad, legibilidad (etapas 01-05 y 06-08)
+- ✅ Benchmarks simples integrados en `PerformanceDemo` (etapa 09)
 
 #### 3.3 Ejercicios Prácticos
-- [ ] Crear carpeta `ejercicios/` con challenges
-- [ ] Incluir soluciones en `ejercicios/soluciones/`
-- [ ] README con instrucciones por ejercicio
+- ✅ Carpeta `ejercicios/` con 3 retos (división segura, cadena de operaciones, filtro Stream)
+- ✅ Soluciones en `ejercicios/soluciones/`
+- ✅ README con instrucciones y tabla de dificultad
 
 #### 3.4 Casos de Uso Reales
-- [ ] Ejemplo: Filtrado de colecciones
-- [ ] Ejemplo: Callbacks y eventos
-- [ ] Ejemplo: Threading con lambdas
-- [ ] Ejemplo: Comparator moderno
+- ✅ Filtrado y ordenación de colecciones
+- ✅ Callbacks y manejo de eventos
+- ✅ Threading con lambdas y CompletableFuture
+- ✅ Comparator moderno
+- ✅ Optional — evitar NullPointerException
 
 **Estimado:** 6-8 horas
 
@@ -227,7 +229,7 @@ jobs:
 | Métrica | Actual | Objetivo |
 |---------|--------|----------|
 | Cobertura de tests | ~70% (14 tests) | 80%+ |
-| Ejemplos de código | 5 etapas | 9 etapas |
+| Ejemplos de código | 9 etapas | 9 etapas ✅ |
 | Documentación web | docs/ con 5 etapas | Completa tutorial |
 | Automatización | CI activo | CI/CD completo |
 | Engagement | - | Analytics configurados |
@@ -281,5 +283,5 @@ Antes de considerar el plan completado:
 ---
 
 *Plan creado el: 2026-03-21*
-*Última actualización: 2026-03-29 — Fases 1 y 2 completadas*
-*Próxima revisión: Al completar Fase 3*
+*Última actualización: 2026-03-30 — Fases 1, 2 y 3 completadas*
+*Próxima revisión: Al completar Fase 4*

@@ -3,10 +3,13 @@ package poc.lambda;
 import poc.util.Printer;
 import poc.util.MessageType;
 
+import java.util.List;
+
 /**
  * Punto de entrada principal del tutorial LambdaPath.
  * Muestra la evolución del código Java desde clases independientes sin interfaz
- * hasta expresiones lambda, pasando por cinco etapas progresivas.
+ * hasta referencias a métodos, Streams y las interfaces funcionales estándar,
+ * pasando por nueve etapas progresivas.
  *
  * @author cazucito
  */
@@ -73,6 +76,32 @@ public class LambdaPathMain {
         };
         OperationInvoker.invoke(a, b, sub);
         OperationInvoker.invoke(a, b, sub);
+        //
+        Printer.print(MessageType.TITLE, "[06] Method References");
+        MethodReferencesDemo.sumWithStaticRef(a, b);
+        MethodReferencesDemo.sumWithBoundInstanceRef(a, b);
+        MethodReferencesDemo.subtractWithUnboundInstanceRef(a, b);
+        MethodReferencesDemo.sumWithConstructorRef(a, b);
+        //
+        Printer.print(MessageType.TITLE, "[07] Streams API");
+        List<Integer> numbers = List.of(-3, -1, 0, 1, 2, 3, 4, 5, 6);
+        StreamsDemo.filterPositives(numbers);
+        StreamsDemo.doubleAll(numbers);
+        StreamsDemo.sumAll(numbers);
+        StreamsDemo.filterMapReduce(numbers);
+        StreamsDemo.countGreaterThan(numbers, 3);
+        //
+        Printer.print(MessageType.TITLE, "[08] Standard Functional Interfaces");
+        FunctionalInterfacesDemo.isPositive(a);
+        FunctionalInterfacesDemo.intToString(a);
+        FunctionalInterfacesDemo.doubleIt(a);
+        FunctionalInterfacesDemo.sumWithBinaryOperator(a, b);
+        FunctionalInterfacesDemo.getConstant();
+        FunctionalInterfacesDemo.printWithConsumer("Hola desde Consumer");
+        //
+        Printer.print(MessageType.TITLE, "[09] Performance Comparison");
+        PerformanceDemo.runAll();
+        //
         Printer.print(MessageType.FOOTER, "");
     }
 
