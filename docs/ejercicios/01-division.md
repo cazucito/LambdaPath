@@ -68,8 +68,7 @@ public class Ejercicio01 {
 
 </details>
 
----
-
+<!-- Navigation -->
 <div class="back-link">
   <a href="{{ '/ejercicios/' | relative_url }}">← Volver a ejercicios</a>
 </div>
