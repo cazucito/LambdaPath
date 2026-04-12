@@ -48,7 +48,6 @@ double result = finalPrice.apply(100.0);  // Aprox: 104.40
 
 <details class="solution-box">
   <summary>Ver solución</summary>
-  <div class="solution-code">
 
 ```java
 import java.util.function.Function;
@@ -71,7 +70,6 @@ public class Ejercicio02 {
 }
 ```
 
-  </div>
 </details>
 
 ---

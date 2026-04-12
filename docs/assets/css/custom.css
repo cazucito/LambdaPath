@@ -1243,13 +1243,8 @@ pre code {
   border-bottom: 1px solid var(--color-border);
 }
 
-.solution-code {
-  padding: var(--spacing-lg);
-  background: var(--color-surface);
-}
-
-.solution-code .highlight {
-  margin: 0;
+.solution-box .highlight {
+  margin: var(--spacing-lg);
 }
 
 /* Legacy styles for old format */

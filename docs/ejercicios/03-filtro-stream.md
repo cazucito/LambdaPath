@@ -57,7 +57,6 @@ List<Producto> productos = Arrays.asList(
 
 <details class="solution-box">
   <summary>Ver solución</summary>
-  <div class="solution-code">
 
 ```java
 import java.util.*;
@@ -101,7 +100,6 @@ public class Ejercicio03 {
 }
 ```
 
-  </div>
 </details>
 
 ---
