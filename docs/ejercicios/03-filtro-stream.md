@@ -102,4 +102,4 @@ public class Ejercicio03 {
 
 ---
 
-[← Volver a ejercicios](/ejercicios/)
+[← Volver a ejercicios]({{ '/ejercicios/' | relative_url }})

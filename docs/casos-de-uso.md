@@ -151,4 +151,4 @@ String email = Optional.ofNullable(usuario)
 
 ---
 
-[← Comparativas](/comparativas) · [Ejercicios →](/ejercicios/)
+[← Comparativas]({{ '/comparativas' | relative_url }}) · [Ejercicios →]({{ '/ejercicios/' | relative_url }})

@@ -80,9 +80,9 @@ mvn exec:java -Dexec.mainClass="poc.lambda.ejercicios.Ejercicio01"
 
 ## Recursos adicionales
 
-- [Ver todas las etapas](/etapas/)
-- [Casos de uso reales](/casos-de-uso)
-- [Comparativas visuales](/comparativas)
+- [Ver todas las etapas]({{ '/etapas/' | relative_url }})
+- [Casos de uso reales]({{ '/casos-de-uso' | relative_url }})
+- [Comparativas visuales]({{ '/comparativas' | relative_url }})
 
 <style>
 .exercises-list {

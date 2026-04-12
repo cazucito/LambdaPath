@@ -92,4 +92,4 @@ suma.apply(6, 3);
 
 ---
 
-[← Inicio](/) · [Ejercicios →](/ejercicios/)
+[← Inicio]({{ '/' | relative_url }}) · [Ejercicios →]({{ '/ejercicios/' | relative_url }})

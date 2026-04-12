@@ -15,28 +15,28 @@ Tutorial educativo que muestra la evolución del código Java desde clases indep
 
 | Etapa | Enfoque | Concepto clave |
 |-------|---------|----------------|
-| [01 — Sin interfaz](etapas/01-sin-interfaz) | Clases independientes | Sin contrato común |
-| [02 — Con interfaz](etapas/02-con-interfaz) | Interfaz funcional | `@FunctionalInterface` |
-| [03 — Clase anónima](etapas/03-clase-anonima) | Implementación inline | Clase anónima interna |
-| [04 — Invocador](etapas/04-invocador) | Referencia genérica | Pasar comportamiento como parámetro |
-| [05 — Lambda](etapas/05-lambda) | Expresión lambda | Sintaxis concisa Java 8+ |
+| [01 — Sin interfaz]({{ '/etapas/01-sin-interfaz' | relative_url }}) | Clases independientes | Sin contrato común |
+| [02 — Con interfaz]({{ '/etapas/02-con-interfaz' | relative_url }}) | Interfaz funcional | `@FunctionalInterface` |
+| [03 — Clase anónima]({{ '/etapas/03-clase-anonima' | relative_url }}) | Implementación inline | Clase anónima interna |
+| [04 — Invocador]({{ '/etapas/04-invocador' | relative_url }}) | Referencia genérica | Pasar comportamiento como parámetro |
+| [05 — Lambda]({{ '/etapas/05-lambda' | relative_url }}) | Expresión lambda | Sintaxis concisa Java 8+ |
 
 ### Etapas 06–09: Java funcional moderno
 
 | Etapa | Enfoque | Concepto clave |
 |-------|---------|----------------|
-| [06 — Method References](etapas/06-method-references) | Referencias a métodos | `Class::method`, `instance::method`, `Class::new` |
-| [07 — Streams API](etapas/07-streams) | Procesamiento de colecciones | `filter`, `map`, `reduce`, `collect` |
-| [08 — Functional Interfaces](etapas/08-functional-interfaces) | Interfaces estándar | `Predicate`, `Function`, `Consumer`, `Supplier`… |
-| [09 — Rendimiento](etapas/09-rendimiento) | Comparativa | Loop vs Stream vs ParallelStream |
+| [06 — Method References]({{ '/etapas/06-method-references' | relative_url }}) | Referencias a métodos | `Class::method`, `instance::method`, `Class::new` |
+| [07 — Streams API]({{ '/etapas/07-streams' | relative_url }}) | Procesamiento de colecciones | `filter`, `map`, `reduce`, `collect` |
+| [08 — Functional Interfaces]({{ '/etapas/08-functional-interfaces' | relative_url }}) | Interfaces estándar | `Predicate`, `Function`, `Consumer`, `Supplier`… |
+| [09 — Rendimiento]({{ '/etapas/09-rendimiento' | relative_url }}) | Comparativa | Loop vs Stream vs ParallelStream |
 
 ---
 
 ## Recursos adicionales
 
-- [Comparativas visuales](comparativas) — diagrama de evolución y tablas de LOC/complejidad
-- [Ejercicios prácticos](ejercicios/) — 3 retos con soluciones
-- [Casos de uso reales](casos-de-uso) — filtrado, Comparator, threading, Optional
+- [Comparativas visuales]({{ '/comparativas' | relative_url }}) — diagrama de evolución y tablas de LOC/complejidad
+- [Ejercicios prácticos]({{ '/ejercicios/' | relative_url }}) — 3 retos con soluciones
+- [Casos de uso reales]({{ '/casos-de-uso' | relative_url }}) — filtrado, Comparator, threading, Optional
 
 ---
 
