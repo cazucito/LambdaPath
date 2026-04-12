@@ -7,7 +7,7 @@
   <div class="wrapper">
     {% include navigation.html %}
     
-    <main class="main-content" role="main">
+    <main class="main-content{% if page.url == '/' %} home-content{% endif %}" role="main">
       {{ content }}
     </main>
 
