@@ -1247,6 +1247,25 @@ pre code {
   margin: var(--spacing-lg);
 }
 
+/* Back link styling */
+.back-link {
+  margin-top: var(--spacing-xl);
+}
+
+.back-link a {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-primary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.back-link a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
 /* Legacy styles for old format */
 .solution-container,
 details {

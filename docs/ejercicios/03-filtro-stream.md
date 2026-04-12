@@ -104,4 +104,6 @@ public class Ejercicio03 {
 
 ---
 
-[← Volver a ejercicios]({{ '/ejercicios/' | relative_url }})
+<div class="back-link">
+  <a href="{{ '/ejercicios/' | relative_url }}">← Volver a ejercicios</a>
+</div>
