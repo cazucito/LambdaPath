@@ -44,8 +44,10 @@ double result = finalPrice.apply(100.0);  // Aprox: 104.40
 
 ## Solución
 
-<details>
-<summary>Ver solución (haz clic para expandir)</summary>
+<div class="solution-container">
+  <details>
+    <summary>🔍 Ver solución (haz clic para expandir)</summary>
+    <div class="solution-content">
 
 ```java
 import java.util.function.Function;
@@ -68,7 +70,9 @@ public class Ejercicio02 {
 }
 ```
 
-</details>
+    </div>
+  </details>
+</div>
 
 ---
 
