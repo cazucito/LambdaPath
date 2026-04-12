@@ -1,85 +1,176 @@
 ---
-layout: default
-title: "Etapa 08 — Interfaces funcionales estándar"
+layout: tutorial
+title: "Etapa 08 — Functional Interfaces"
+description: "Domina las interfaces funcionales estándar de Java: Predicate, Function, Consumer, Supplier y más."
+stage_number: 8
+learning_objectives:
+  - Usar Predicate para filtros
+  - Aplicar Function para transformaciones
+  - Emplear Consumer para efectos secundarios
+  - Utilizar Supplier para generación
+  - Combinar interfaces funcionales
 ---
 
-# Etapa 08 — Interfaces funcionales estándar
+Java 8 incluye interfaces funcionales estándar en `java.util.function`. Conocerlas evita reinventar la rueda.
 
-Java incluye en `java.util.function` un conjunto de interfaces funcionales genéricas listas para usar. Conocerlas evita crear interfaces propias innecesarias.
+## Las 4 Interfaces Fundamentales
 
-## Las más importantes
-
-| Interfaz | Firma | Descripción |
-|----------|-------|-------------|
-| `Predicate<T>` | `T → boolean` | Condición / filtro |
-| `Function<T,R>` | `T → R` | Transformación |
-| `Consumer<T>` | `T → void` | Efecto secundario |
-| `Supplier<T>` | `() → T` | Proveedor de valor |
-| `UnaryOperator<T>` | `T → T` | Transformación mismo tipo |
-| `BinaryOperator<T>` | `(T,T) → T` | Combina dos valores del mismo tipo |
-| `BiFunction<T,U,R>` | `(T,U) → R` | Transforma dos argumentos |
-
-## Relación con el proyecto
-
-`ArithmeticCalculator` es equivalente a `BinaryOperator<Integer>` / `IntBinaryOperator`:
+### 1. Predicate<T> — Prueba una condición
 
 ```java
-// Interfaz propia del proyecto
-ArithmeticCalculator suma = (a, b) -> a + b;
+@FunctionalInterface
+public interface Predicate<T> {
+    boolean test(T t);
+}
 
-// Interfaz estándar equivalente — misma lambda, diferente tipo
-BinaryOperator<Integer> sumaEstandar = Integer::sum;
+// Uso
+Predicate<Integer> isPositive = n -> n > 0;
+Predicate<String> isLong = s -> s.length() > 5;
+
+// En Streams
+list.stream()
+    .filter(isPositive)
+    .collect(Collectors.toList());
 ```
 
-## Ejemplos
+**Métodos de combinación:**
+```java
+Predicate<Integer> isEven = n -> n % 2 == 0;
+Predicate<Integer> isPositive = n -> n > 0;
+
+// AND lógico
+Predicate<Integer> isPositiveEven = isPositive.and(isEven);
+
+// OR lógico  
+Predicate<Integer> isPositiveOrEven = isPositive.or(isEven);
+
+// Negación
+Predicate<Integer> isNotPositive = isPositive.negate();
+```
+
+### 2. Function<T, R> — Transforma T en R
 
 ```java
-// Predicate<T>: T → boolean
-Predicate<Integer> esPositivo = n -> n > 0;
-esPositivo.test(5);   // true
-esPositivo.test(-1);  // false
+@FunctionalInterface
+public interface Function<T, R> {
+    R apply(T t);
+}
 
-// Function<T,R>: T → R
-Function<Integer, String> aTexto = n -> "Número: " + n;
-aTexto.apply(42);   // "Número: 42"
+// Uso
+Function<String, Integer> length = String::length;
+Function<Integer, String> toString = String::valueOf;
 
-// UnaryOperator<T>: T → T
-UnaryOperator<Integer> doble = n -> n * 2;
-doble.apply(6);   // 12
-
-// BinaryOperator<T>: (T,T) → T
-BinaryOperator<Integer> suma = Integer::sum;
-suma.apply(6, 3);  // 9
-
-// Supplier<T>: () → T
-Supplier<Integer> constante = () -> 42;
-constante.get();  // 42
-
-// Consumer<T>: T → void
-Consumer<String> imprimir = msg -> System.out.println(msg);
-imprimir.accept("Hola");
+// Composición
+Function<String, String> trimAndUpper = 
+    ((Function<String, String>) String::trim)
+        .andThen(String::toUpperCase);
 ```
 
-## Composición de interfaces
-
-Las interfaces funcionales estándar incluyen métodos `default` para componer operaciones:
+### 3. Consumer<T> — Realiza una acción
 
 ```java
-Predicate<Integer> esPositivo = n -> n > 0;
-Predicate<Integer> esPar      = n -> n % 2 == 0;
+@FunctionalInterface
+public interface Consumer<T> {
+    void accept(T t);
+}
 
-// Composición: positivo Y par
-Predicate<Integer> positivoPar = esPositivo.and(esPar);
-positivoPar.test(4);   // true
-positivoPar.test(-4);  // false
+// Uso
+Consumer<String> print = System.out::println;
+Consumer<String> log = s -> Logger.info(s);
 
-// Composición: función encadenada
-Function<Integer, Integer> triplicar = n -> n * 3;
-Function<Integer, String>  aTexto    = n -> "val=" + n;
-Function<Integer, String>  pipeline  = triplicar.andThen(aTexto);
-pipeline.apply(4);  // "val=12"
+// Composición
+Consumer<String> printAndLog = print.andThen(log);
 ```
 
----
+### 4. Supplier<T> — Proporciona un valor
 
-[← Streams](07-streams) · [Siguiente: Rendimiento →](09-rendimiento)
+```java
+@FunctionalInterface
+public interface Supplier<T> {
+    T get();
+}
+
+// Uso
+Supplier<LocalDateTime> now = LocalDateTime::now;
+Supplier<List<String>> listFactory = ArrayList::new;
+Supplier<Double> random = Math::random;
+
+// En Optional
+String value = optional.orElseGet(() -> "default");
+```
+
+## Variantes Primitivas
+
+Evitan autoboxing (mejor rendimiento):
+
+| Objeto | Primitivo |
+|--------|-----------|
+| `Predicate<T>` | `IntPredicate`, `LongPredicate`, `DoublePredicate` |
+| `Function<T, R>` | `IntFunction<R>`, `ToIntFunction<T>` |
+| `Consumer<T>` | `IntConsumer`, `LongConsumer` |
+| `Supplier<T>` | `IntSupplier`, `BooleanSupplier` |
+
+```java
+// Con autoboxing (menos eficiente)
+Function<Integer, Integer> square = x -> x * x;
+
+// Sin autoboxing (más eficiente)
+IntUnaryOperator square = x -> x * x;
+
+// En streams
+IntStream.range(1, 100)
+    .filter(x -> x % 2 == 0)  // IntPredicate
+    .map(x -> x * x)          // IntUnaryOperator
+    .sum();                   // IntStream sum
+```
+
+## Otras Interfaces Útiles
+
+### UnaryOperator<T> — T → T
+
+```java
+// Cuando entrada y salida son del mismo tipo
+UnaryOperator<String> trim = String::trim;
+UnaryOperator<Integer> doubleIt = x -> x * 2;
+```
+
+### BinaryOperator<T> — (T, T) → T
+
+```java
+// Para reducciones del mismo tipo
+BinaryOperator<Integer> sum = Integer::sum;
+BinaryOperator<String> concat = String::concat;
+
+int total = numbers.stream()
+    .reduce(0, Integer::sum);  // BinaryOperator
+```
+
+### BiFunction<T, U, R> — (T, U) → R
+
+```java
+BiFunction<String, Integer, String> repeat = 
+    (s, n) -> s.repeat(n);
+
+// Map.merge usa BiFunction
+map.merge(key, 1, Integer::sum);
+```
+
+## Cuadro de Referencia Rápida
+
+```
+┌──────────────────┬─────────────────┬─────────────────────────────┐
+│ Interface        │ Método          │ Uso típico                  │
+├──────────────────┼─────────────────┼─────────────────────────────┤
+│ Predicate<T>     │ test(T) → bool  │ filter(), anyMatch()        │
+│ Function<T,R>    │ apply(T) → R    │ map(), transformaciones     │
+│ Consumer<T>      │ accept(T) → void│ forEach(), side effects     │
+│ Supplier<T>      │ get() → T       │ factory, lazy init          │
+│ UnaryOperator<T> │ apply(T) → T    │ modificaciones in-place     │
+│ BinaryOperator<T>│ apply(T,T) → T  │ reduce(), combinaciones     │
+└──────────────────┴─────────────────┴─────────────────────────────┘
+```
+
+<div class="callout tip">
+  <div class="callout-title">💡 Mejor práctica</div>
+  Prefiere las interfaces del paquete <code>java.util.function</code> antes de crear tus propias interfaces funcionales. Son universales, optimizadas y todos los desarrolladores Java las reconocen.
+</div>
