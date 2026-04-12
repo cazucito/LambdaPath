@@ -69,4 +69,4 @@ ejercicios/          ← retos con soluciones
 
 ---
 
-[Ver en GitHub](https://github.com/cazucito/LambdaPath) · [Contribuir](https://github.com/cazucito/LambdaPath/blob/master/CONTRIBUTING.md)
+[Ver en GitHub](https://github.com/cazucito/LambdaPath) · [Contribuir](https://github.com/cazucito/LambdaPath/blob/master/CONTRIBUTING.md){:target="_blank" rel="noopener"}
