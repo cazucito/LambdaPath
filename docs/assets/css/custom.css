@@ -1191,98 +1191,98 @@ pre code {
 }
 
 /* ========================================
-   Details/Summary (Exercise Solutions)
+   Exercise Solutions - Simplified
    ======================================== */
 
-.solution-container {
-  background: linear-gradient(135deg, rgba(231, 111, 0, 0.05), rgba(83, 130, 161, 0.05));
+.solution-header {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-sm);
+  margin-top: var(--spacing-xl);
+}
+
+.solution-box {
+  background: var(--color-surface);
   border: 2px solid var(--color-border);
   border-radius: var(--radius-lg);
-  margin: var(--spacing-lg) 0;
+  margin: var(--spacing-md) 0 var(--spacing-xl);
   overflow: hidden;
 }
 
-.solution-container details {
-  background: transparent;
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-
-.solution-container summary {
-  font-weight: 600;
+.solution-box summary {
+  background: linear-gradient(135deg, rgba(231, 111, 0, 0.08), rgba(83, 130, 161, 0.08));
   color: var(--color-primary);
   cursor: pointer;
+  font-weight: 600;
   padding: var(--spacing-md) var(--spacing-lg);
-  user-select: none;
   list-style: none;
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  background: var(--color-surface);
-  transition: background var(--transition-fast);
 }
 
-.solution-container summary::-webkit-details-marker {
+.solution-box summary::-webkit-details-marker {
   display: none;
 }
 
-.solution-container summary::before {
+.solution-box summary::before {
   content: '▶';
   font-size: 0.8rem;
-  transition: transform var(--transition-fast);
-  color: var(--color-primary);
+  transition: transform 0.2s ease;
 }
 
-.solution-container details[open] summary::before {
+.solution-box[open] summary::before {
   transform: rotate(90deg);
 }
 
-.solution-container summary:hover {
-  background: rgba(231, 111, 0, 0.08);
+.solution-box summary:hover {
+  background: linear-gradient(135deg, rgba(231, 111, 0, 0.12), rgba(83, 130, 161, 0.12));
 }
 
-.solution-container details[open] summary {
+.solution-box[open] summary {
   border-bottom: 1px solid var(--color-border);
 }
 
-.solution-content {
+.solution-code {
   padding: var(--spacing-lg);
   background: var(--color-surface);
 }
 
-.solution-content .highlight {
+.solution-code .highlight {
   margin: 0;
-  border-radius: var(--radius-md);
 }
 
-/* Legacy details styling (for backward compatibility) */
+/* Legacy styles for old format */
+.solution-container,
 details {
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   margin: var(--spacing-lg) 0;
-  padding: var(--spacing-md);
 }
 
-summary {
+.solution-container summary,
+details summary {
   font-weight: 600;
   color: var(--color-primary);
   cursor: pointer;
-  padding: var(--spacing-sm);
+  padding: var(--spacing-md);
   user-select: none;
 }
 
-summary:hover {
+.solution-container summary:hover,
+details summary:hover {
   color: var(--color-primary-dark);
 }
 
+.solution-container[open] summary,
 details[open] summary {
-  margin-bottom: var(--spacing-md);
   border-bottom: 1px solid var(--color-border);
-  padding-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
+.solution-content,
+.solution-container .highlight,
 details .highlight {
   margin: var(--spacing-md) 0 0;
 }

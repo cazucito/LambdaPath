@@ -53,10 +53,11 @@ List<Producto> productos = Arrays.asList(
 
 ## Solución
 
-<div class="solution-container">
-  <details>
-    <summary>🔍 Ver solución (haz clic para expandir)</summary>
-    <div class="solution-content">
+<p class="solution-header">🔍 Haz clic para ver la solución:</p>
+
+<details class="solution-box">
+  <summary>Ver solución</summary>
+  <div class="solution-code">
 
 ```java
 import java.util.*;
@@ -100,9 +101,8 @@ public class Ejercicio03 {
 }
 ```
 
-    </div>
-  </details>
-</div>
+  </div>
+</details>
 
 ---
 

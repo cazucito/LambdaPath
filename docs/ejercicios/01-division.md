@@ -43,10 +43,11 @@ Optional<Integer> result2 = divider.divide(10, 0);  // Optional.empty
 
 ## Solución
 
-<div class="solution-container">
-  <details>
-    <summary>🔍 Ver solución (haz clic para expandir)</summary>
-    <div class="solution-content">
+<p class="solution-header">🔍 Haz clic para ver la solución:</p>
+
+<details class="solution-box">
+  <summary>Ver solución</summary>
+  <div class="solution-code">
 
 ```java
 @FunctionalInterface
@@ -66,9 +67,8 @@ public class Ejercicio01 {
 }
 ```
 
-    </div>
-  </details>
-</div>
+  </div>
+</details>
 
 ---
 
