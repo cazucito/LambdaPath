@@ -23,13 +23,35 @@
   <!-- Mermaid.js for diagrams -->
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    
     mermaid.initialize({ 
-      startOnLoad: true,
+      startOnLoad: false,
       theme: 'default',
       flowchart: {
         useMaxWidth: true,
         htmlLabels: true
       }
+    });
+    
+    // Find all mermaid code blocks and render them
+    document.addEventListener('DOMContentLoaded', async () => {
+      const mermaidBlocks = document.querySelectorAll('pre code.language-mermaid');
+      
+      for (const block of mermaidBlocks) {
+        const pre = block.parentElement;
+        const code = block.textContent;
+        
+        // Create a div for the mermaid diagram
+        const mermaidDiv = document.createElement('div');
+        mermaidDiv.className = 'mermaid';
+        mermaidDiv.textContent = code;
+        
+        // Replace the pre block with the mermaid div
+        pre.replaceWith(mermaidDiv);
+      }
+      
+      // Run mermaid after replacing all blocks
+      await mermaid.run();
     });
   </script>
 </body>
