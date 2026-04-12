@@ -92,4 +92,4 @@ suma.apply(6, 3);
 
 ---
 
-[← Inicio](index) · [Ejercicios →](ejercicios/)
+[← Inicio](/) · [Ejercicios →](/ejercicios/)

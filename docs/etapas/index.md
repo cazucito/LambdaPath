@@ -93,19 +93,19 @@ Explora las **9 etapas** que te llevarán desde el diseño clásico de clases en
 
 <div class="resources-grid">
 
-<a href="../comparativas" class="resource-card">
+<a href="{{ '/comparativas' | relative_url }}" class="resource-card">
   <div class="resource-icon">📊</div>
   <h4>Comparativas Visuales</h4>
   <p>Diagrama de evolución y tablas comparativas de LOC/complejidad.</p>
 </a>
 
-<a href="../ejercicios/" class="resource-card">
+<a href="{{ '/ejercicios/' | relative_url }}" class="resource-card">
   <div class="resource-icon">💪</div>
   <h4>Ejercicios Prácticos</h4>
   <p>3 retos con soluciones para practicar lo aprendido.</p>
 </a>
 
-<a href="../casos-de-uso" class="resource-card">
+<a href="{{ '/casos-de-uso' | relative_url }}" class="resource-card">
   <div class="resource-icon">💼</div>
   <h4>Casos de Uso Reales</h4>
   <p>Aplicaciones prácticas: filtrado, Comparator, threading, Optional...</p>

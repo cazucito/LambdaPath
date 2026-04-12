@@ -151,4 +151,4 @@ String email = Optional.ofNullable(usuario)
 
 ---
 
-[← Comparativas](comparativas) · [Ejercicios →](ejercicios/)
+[← Comparativas](/comparativas) · [Ejercicios →](/ejercicios/)
