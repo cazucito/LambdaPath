@@ -47,7 +47,7 @@ double result = finalPrice.apply(100.0);  // Aprox: 104.40
 <p class="solution-header">🔍 Haz clic para ver la solución:</p>
 
 <details class="solution-box">
-  <summary>Ver solución</summary>
+<summary>Ver solución</summary>
 
 ```java
 import java.util.function.Function;
@@ -69,11 +69,8 @@ public class Ejercicio02 {
     }
 }
 ```
-
 </details>
 
 ---
 
-<div class="back-link">
-  <a href="{{ '/ejercicios/' | relative_url }}">← Volver a ejercicios</a>
-</div>
+<p><a href="{{ '/ejercicios/' | relative_url }}">← Volver a ejercicios</a></p>
