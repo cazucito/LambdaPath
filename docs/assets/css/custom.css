@@ -1057,6 +1057,174 @@ pre code {
 }
 
 /* ========================================
+   Syntax Highlighting - Monokai-inspired Theme
+   ======================================== */
+
+/* Base highlight container */
+.highlight {
+  background: #272822;
+  border-radius: var(--radius-md);
+}
+
+.highlight pre {
+  background: #272822;
+  color: #f8f8f2;
+}
+
+/* Comments */
+.highlight .c,
+.highlight .c1,
+.highlight .cm {
+  color: #75715e;
+  font-style: italic;
+}
+
+/* Keywords */
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr {
+  color: #66d9ef;
+  font-weight: bold;
+}
+
+/* Control flow keywords */
+.highlight .kc {
+  color: #66d9ef;
+}
+
+/* Strings */
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd {
+  color: #e6db74;
+}
+
+/* Numbers */
+.highlight .m,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo {
+  color: #ae81ff;
+}
+
+/* Functions/Methods */
+.highlight .nf,
+.highlight .na {
+  color: #a6e22e;
+}
+
+/* Classes */
+.highlight .nc {
+  color: #a6e22e;
+  font-weight: bold;
+}
+
+/* Built-in types */
+.highlight .kt,
+.highlight .nb {
+  color: #66d9ef;
+}
+
+/* Operators */
+.highlight .o,
+.highlight .ow {
+  color: #f92672;
+}
+
+/* Punctuation */
+.highlight .p {
+  color: #f8f8f2;
+}
+
+/* Variables */
+.highlight .n,
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi {
+  color: #f8f8f2;
+}
+
+/* Annotations */
+.highlight .nd {
+  color: #a6e22e;
+}
+
+/* Generic parameters */
+.highlight .nx {
+  color: #f8f8f2;
+}
+
+/* Error */
+.highlight .err {
+  color: #f8f8f2;
+  background-color: #f92672;
+}
+
+/* Deleted */
+.highlight .gd {
+  color: #f92672;
+}
+
+/* Inserted */
+.highlight .gi {
+  color: #a6e22e;
+}
+
+/* ========================================
+   Mermaid Diagrams
+   ======================================== */
+
+.mermaid {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+  text-align: center;
+  overflow-x: auto;
+}
+
+/* ========================================
+   Details/Summary (Exercise Solutions)
+   ======================================== */
+
+details {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md);
+}
+
+summary {
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  padding: var(--spacing-sm);
+  user-select: none;
+}
+
+summary:hover {
+  color: var(--color-primary-dark);
+}
+
+details[open] summary {
+  margin-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--spacing-md);
+}
+
+details .highlight {
+  margin: var(--spacing-md) 0 0;
+}
+
+/* ========================================
    Print Styles
    ======================================== */
 
