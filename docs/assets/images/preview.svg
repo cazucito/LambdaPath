@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
+    </linearGradient>
+    <linearGradient id="accent-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e76f00"/>
+      <stop offset="100%" style="stop-color:#5382a1"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="100" cy="100" r="200" fill="url(#accent-gradient)" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="250" fill="url(#accent-gradient)" opacity="0.08"/>
+  
+  <!-- Lambda symbol -->
+  <text x="200" y="380" font-family="Georgia, serif" font-size="280" font-weight="bold" fill="url(#accent-gradient)">λ</text>
+  
+  <!-- Title -->
+  <text x="600" y="280" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="72" font-weight="700" fill="white" text-anchor="middle">LambdaPath</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" fill="#a0aec0" text-anchor="middle">Tutorial de Java: De clases a lambdas</text>
+  
+  <!-- Features -->
+  <text x="600" y="440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" fill="#718096" text-anchor="middle">9 etapas · Ejercicios · Casos de uso reales</text>
+  
+  <!-- Java badge -->
+  <rect x="520" y="500" width="160" height="44" rx="22" fill="url(#accent-gradient)"/>
+  <text x="600" y="530" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" font-weight="600" fill="white" text-anchor="middle">Java 17+</text>
+</svg>

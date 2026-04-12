@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cazucito.github.io/LambdaPath/sitemap.xml

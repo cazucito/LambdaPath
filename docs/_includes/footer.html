@@ -1,0 +1,42 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-section">
+      <h3 class="footer-title">LambdaPath</h3>
+      <p class="footer-description">Tutorial educativo para dominar expresiones lambda, method references y Streams en Java.</p>
+    </div>
+    
+    <div class="footer-section">
+      <h4 class="footer-heading">Recursos</h4>
+      <ul class="footer-links">
+        <li><a href="{{ '/etapas/' | relative_url }}">Todas las etapas</a></li>
+        <li><a href="{{ '/ejercicios/' | relative_url }}">Ejercicios prácticos</a></li>
+        <li><a href="{{ '/comparativas' | relative_url }}">Comparativas visuales</a></li>
+        <li><a href="{{ '/casos-de-uso' | relative_url }}">Casos de uso reales</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4 class="footer-heading">Contribuir</h4>
+      <ul class="footer-links">
+        <li><a href="https://github.com/{{ site.github_username }}/LambdaPath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://github.com/{{ site.github_username }}/LambdaPath/blob/master/CONTRIBUTING.md" target="_blank" rel="noopener">Guía de contribución</a></li>
+        <li><a href="https://github.com/{{ site.github_username }}/LambdaPath/issues" target="_blank" rel="noopener">Reportar issue</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4 class="footer-heading">Legal</h4>
+      <ul class="footer-links">
+        <li><a href="https://github.com/{{ site.github_username }}/LambdaPath/blob/master/LICENSE" target="_blank" rel="noopener">Licencia GPL v3</a></li>
+        <li><a href="https://github.com/{{ site.github_username }}/LambdaPath/blob/master/CODE_OF_CONDUCT.md" target="_blank" rel="noopener">Código de conducta</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="copyright">
+      © {{ 'now' | date: '%Y' }} {{ site.author }}. 
+      Desarrollado con ❤️ y ☕ Java.
+    </p>
+  </div>
+</footer>

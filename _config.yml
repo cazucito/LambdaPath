@@ -1,7 +1,8 @@
 title: LambdaPath
 description: >-
   Tutorial educativo que demuestra la evolución del código Java desde clases
-  tradicionales hasta expresiones lambda, en cinco etapas progresivas.
+  tradicionales hasta expresiones lambda, method references y Streams API,
+  en nueve etapas progresivas con ejercicios prácticos.
 author: cazucito
 url: "https://cazucito.github.io"
 baseurl: "/LambdaPath"
@@ -9,6 +10,12 @@ lang: es
 
 # Tema Jekyll
 theme: jekyll-theme-time-machine
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
 
 # Metadatos del repositorio
 repository: cazucito/LambdaPath
@@ -20,15 +27,42 @@ nav:
     url: /
   - title: Etapas
     url: /etapas/
+  - title: Ejercicios
+    url: /ejercicios/
   - title: Contribuir
     url: /contributing/
 
-# Build
+# SEO
+twitter:
+  username: cazucito
+  card: summary_large_image
+
+social:
+  name: Pedro Cazu
+  links:
+    - https://github.com/cazucito
+
+# Build settings
 markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+# Sass/SCSS
+sass:
+  style: compressed
+
+# Paginación (si se necesita en el futuro)
+paginate: 10
+paginate_path: "/page/:num/"
 
 # Excluir del build
 exclude:
@@ -42,3 +76,19 @@ exclude:
   - "*.iml"
   - .idea/
   - .vscode/
+  - "*.gemspec"
+  - Gemfile
+  - Gemfile.lock
+
+# Incluir archivos específicos
+include:
+  - _pages
+
+# Colecciones (para futura expansión)
+collections:
+  etapas:
+    output: true
+    permalink: /:collection/:name/
+  ejercicios:
+    output: true
+    permalink: /:collection/:name/

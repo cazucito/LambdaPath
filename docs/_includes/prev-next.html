@@ -1,0 +1,71 @@
+{% assign stages = "/etapas/01-sin-interfaz,/etapas/02-con-interfaz,/etapas/03-clase-anonima,/etapas/04-invocador,/etapas/05-lambda,/etapas/06-method-references,/etapas/07-streams,/etapas/08-functional-interfaces,/etapas/09-rendimiento" | split: "," %}
+
+{% for stage in stages %}
+  {% if stage == page.url %}
+    {% assign current_index = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+
+<nav class="prev-next-nav" aria-label="Navegación entre etapas">
+  <div class="prev-next-container">
+    {% if current_index > 0 %}
+      {% assign prev_index = current_index | minus: 1 %}
+      {% assign prev_url = stages[prev_index] %}
+      <a href="{{ prev_url | relative_url }}" class="prev-link">
+        <span class="prev-label">← Anterior</span>
+        <span class="prev-title">
+          {% case prev_index %}
+            {% when 0 %}01 — Sin interfaz
+            {% when 1 %}02 — Con interfaz
+            {% when 2 %}03 — Clase anónima
+            {% when 3 %}04 — Invocador
+            {% when 4 %}05 — Lambda
+            {% when 5 %}06 — Method References
+            {% when 6 %}07 — Streams
+            {% when 7 %}08 — Functional Interfaces
+          {% endcase %}
+        </span>
+      </a>
+    {% else %}
+      <span class="prev-link disabled">
+        <span class="prev-label">← Anterior</span>
+        <span class="prev-title">Inicio del tutorial</span>
+      </span>
+    {% endif %}
+
+    <div class="progress-dots" aria-hidden="true">
+      {% for i in (0..8) %}
+        {% if i == current_index %}
+          <span class="dot active"></span>
+        {% else %}
+          <span class="dot"></span>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if current_index < 8 %}
+      {% assign next_index = current_index | plus: 1 %}
+      {% assign next_url = stages[next_index] %}
+      <a href="{{ next_url | relative_url }}" class="next-link">
+        <span class="next-label">Siguiente →</span>
+        <span class="next-title">
+          {% case next_index %}
+            {% when 1 %}02 — Con interfaz
+            {% when 2 %}03 — Clase anónima
+            {% when 3 %}04 — Invocador
+            {% when 4 %}05 — Lambda
+            {% when 5 %}06 — Method References
+            {% when 6 %}07 — Streams
+            {% when 7 %}08 — Functional Interfaces
+            {% when 8 %}09 — Rendimiento
+          {% endcase %}
+        </span>
+      </a>
+    {% else %}
+      <a href="{{ '/ejercicios/' | relative_url }}" class="next-link exercises-cta">
+        <span class="next-label">💪 Ejercicios →</span>
+        <span class="next-title">Practica lo aprendido</span>
+      </a>
+    {% endif %}
+  </div>
+</nav>

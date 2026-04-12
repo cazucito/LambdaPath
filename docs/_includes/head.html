@@ -1,0 +1,62 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Primary Meta Tags -->
+<title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+<meta name="title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="author" content="{{ site.author }}">
+<meta name="keywords" content="Java, Lambda, Tutorial, Programación funcional, Streams, Method References">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{% if page.layout == 'tutorial' %}article{% else %}website{% endif %}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:image" content="{{ '/assets/images/preview.png' | absolute_url }}">
+<meta property="og:site_name" content="{{ site.title }}">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ page.url | absolute_url }}">
+<meta property="twitter:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="twitter:image" content="{{ '/assets/images/preview.png' | absolute_url }}">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="{{ '/assets/images/logo.svg' | relative_url }}">
+<link rel="alternate icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Jekyll Theme CSS -->
+<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{% if page.layout == 'tutorial' %}LearningResource{% else %}WebSite{% endif %}",
+  "name": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
+  "description": "{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}",
+  "url": "{{ page.url | absolute_url }}",
+  {% if page.layout == 'tutorial' %}
+  "learningResourceType": "Tutorial",
+  "educationalLevel": "Beginner to Intermediate",
+  "inLanguage": "es",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author }}"
+  }
+  {% else %}
+  "url": "{{ site.url }}{{ site.baseurl }}"
+  {% endif %}
+}
+</script>

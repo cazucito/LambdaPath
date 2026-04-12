@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'es' }}">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  <div class="wrapper">
+    {% include navigation.html %}
+    
+    <main class="main-content" role="main">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+  </div>
+
+  <script src="{{ '/assets/js/navigation.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/copy-code.js' | relative_url }}"></script>
+  {% if page.has_quiz %}
+  <script src="{{ '/assets/js/quiz.js' | relative_url }}"></script>
+  {% endif %}
+</body>
+</html>

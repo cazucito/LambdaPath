@@ -1,0 +1,99 @@
+---
+layout: default
+---
+
+<div class="tutorial-layout">
+  <!-- Sidebar Navigation -->
+  <aside class="tutorial-sidebar" role="complementary" aria-label="Navegación del tutorial">
+    <nav class="sidebar-nav">
+      <div class="sidebar-header">
+        <a href="{{ '/etapas/' | relative_url }}" class="back-to-index">
+          ← Todas las etapas
+        </a>
+      </div>
+
+      <div class="progress-indicator">
+        {% assign current_stage = page.stage_number | default: 1 %}
+        <span class="progress-text">Etapa {{ current_stage }} de 9</span>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: {{ current_stage | times: 11.11 }}%"></div>
+        </div>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="menu-section">Etapas 01-05</li>
+        <li class="{% if page.url contains '01-sin-interfaz' %}active{% endif %}">
+          <a href="{{ '/etapas/01-sin-interfaz' | relative_url }}">01 — Sin interfaz</a>
+        </li>
+        <li class="{% if page.url contains '02-con-interfaz' %}active{% endif %}">
+          <a href="{{ '/etapas/02-con-interfaz' | relative_url }}">02 — Con interfaz</a>
+        </li>
+        <li class="{% if page.url contains '03-clase-anonima' %}active{% endif %}">
+          <a href="{{ '/etapas/03-clase-anonima' | relative_url }}">03 — Clase anónima</a>
+        </li>
+        <li class="{% if page.url contains '04-invocador' %}active{% endif %}">
+          <a href="{{ '/etapas/04-invocador' | relative_url }}">04 — Invocador</a>
+        </li>
+        <li class="{% if page.url contains '05-lambda' %}active{% endif %}">
+          <a href="{{ '/etapas/05-lambda' | relative_url }}">05 — Lambda</a>
+        </li>
+        
+        <li class="menu-section">Etapas 06-09</li>
+        <li class="{% if page.url contains '06-method-references' %}active{% endif %}">
+          <a href="{{ '/etapas/06-method-references' | relative_url }}">06 — Method References</a>
+        </li>
+        <li class="{% if page.url contains '07-streams' %}active{% endif %}">
+          <a href="{{ '/etapas/07-streams' | relative_url }}">07 — Streams</a>
+        </li>
+        <li class="{% if page.url contains '08-functional-interfaces' %}active{% endif %}">
+          <a href="{{ '/etapas/08-functional-interfaces' | relative_url }}">08 — Functional Interfaces</a>
+        </li>
+        <li class="{% if page.url contains '09-rendimiento' %}active{% endif %}">
+          <a href="{{ '/etapas/09-rendimiento' | relative_url }}">09 — Rendimiento</a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="{{ '/ejercicios/' | relative_url }}" class="exercises-link">
+          💪 Ir a ejercicios
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <article class="tutorial-content" role="main">
+    <header class="tutorial-header">
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <ol>
+          <li><a href="{{ '/' | relative_url }}">Inicio</a></li>
+          <li><a href="{{ '/etapas/' | relative_url }}">Etapas</a></li>
+          <li aria-current="page">{{ page.title | replace: 'Etapa ', '' }}</li>
+        </ol>
+      </nav>
+      
+      <h1 class="tutorial-title">{{ page.title }}</h1>
+      
+      {% if page.description %}
+      <p class="tutorial-description">{{ page.description }}</p>
+      {% endif %}
+      
+      {% if page.learning_objectives %}
+      <div class="learning-objectives">
+        <h3>🎯 Objetivos de aprendizaje</h3>
+        <ul>
+          {% for objective in page.learning_objectives %}
+          <li>{{ objective }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </header>
+
+    <div class="tutorial-body">
+      {{ content }}
+    </div>
+
+    {% include prev-next.html %}
+  </article>
+</div>
