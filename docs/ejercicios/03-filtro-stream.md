@@ -55,7 +55,7 @@ List<Producto> productos = Arrays.asList(
 
 <p class="solution-header">🔍 Haz clic para ver la solución:</p>
 
-<details class="solution-box">
+<details class="solution-box" markdown="1">
 <summary>Ver solución</summary>
 
 ```java
@@ -99,6 +99,7 @@ public class Ejercicio03 {
     }
 }
 ```
+
 </details>
 
 ---

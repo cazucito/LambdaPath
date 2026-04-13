@@ -45,7 +45,7 @@ Optional<Integer> result2 = divider.divide(10, 0);  // Optional.empty
 
 <p class="solution-header">🔍 Haz clic para ver la solución:</p>
 
-<details class="solution-box">
+<details class="solution-box" markdown="1">
 <summary>Ver solución</summary>
 
 ```java
@@ -65,6 +65,7 @@ public class Ejercicio01 {
     }
 }
 ```
+
 </details>
 
 ---
