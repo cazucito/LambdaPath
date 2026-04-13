@@ -4,9 +4,11 @@
 [![Java 17](https://img.shields.io/badge/Java-17-blue?logo=openjdk)](https://openjdk.org/projects/jdk/17/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 
-Tutorial educativo que demuestra la evolución del código Java desde clases independientes sin interfaz hasta expresiones lambda, en cinco etapas progresivas.
+Tutorial educativo que demuestra la **evolución del código Java** desde clases tradicionales hasta expresiones lambda, method references y Streams API.
 
 > **Convención:** identificadores en inglés · documentación y comentarios en español.
+> 
+> **🌐 Sitio web:** [cazucito.github.io/LambdaPath](https://cazucito.github.io/LambdaPath)
 
 ---
 
@@ -25,13 +27,24 @@ Tutorial educativo que demuestra la evolución del código Java desde clases ind
 
 ## Etapas del tutorial
 
+### Etapas 01-05: Del diseño clásico a las lambdas
+
 | # | Etapa | Concepto |
 |---|-------|---------|
-| 01 | Clases independientes sin interfaz | Clases concretas sin contrato común |
-| 02 | Implementación de interfaz funcional | `@FunctionalInterface` |
-| 03 | Clases anónimas internas | Implementación inline sin archivo separado |
-| 04 | Invocador con referencia genérica | Pasar comportamiento como parámetro (Strategy) |
-| 05 | Expresiones lambda | Sintaxis concisa — Java 8+ |
+| 01 | [Clases sin interfaz](https://cazucito.github.io/LambdaPath/etapas/01-sin-interfaz) | Clases concretas sin contrato común |
+| 02 | [Con interfaz](https://cazucito.github.io/LambdaPath/etapas/02-con-interfaz) | `@FunctionalInterface` |
+| 03 | [Clase anónima](https://cazucito.github.io/LambdaPath/etapas/03-clase-anonima) | Implementación inline sin archivo separado |
+| 04 | [Invocador](https://cazucito.github.io/LambdaPath/etapas/04-invocador) | Pasar comportamiento como parámetro (Strategy) |
+| 05 | [Lambda](https://cazucito.github.io/LambdaPath/etapas/05-lambda) | Sintaxis concisa — Java 8+ |
+
+### Etapas 06-09: Java funcional moderno
+
+| # | Etapa | Concepto |
+|---|-------|---------|
+| 06 | [Method References](https://cazucito.github.io/LambdaPath/etapas/06-method-references) | Referencias a métodos: `Class::method` |
+| 07 | [Streams API](https://cazucito.github.io/LambdaPath/etapas/07-streams) | Procesamiento de colecciones: `filter`, `map`, `reduce` |
+| 08 | [Functional Interfaces](https://cazucito.github.io/LambdaPath/etapas/08-functional-interfaces) | Interfaces estándar: `Predicate`, `Function`, `Consumer`... |
+| 09 | [Rendimiento](https://cazucito.github.io/LambdaPath/etapas/09-rendimiento) | Loop vs Stream vs ParallelStream |
 
 ---
 
@@ -54,12 +67,15 @@ LambdaPath/
 ├── pom.xml                          ← build Maven (Java 17, JUnit 5)
 ├── src/
 │   ├── main/java/poc/
-│   │   ├── lambda/                  ← etapas 01-05 del tutorial
+│   │   ├── lambda/                  ← etapas 01-09 del tutorial
 │   │   └── util/                    ← Printer, Timer, MessageType
-│   └── test/java/poc/lambda/        ← 14 tests JUnit 5
+│   └── test/java/poc/lambda/        ← 40+ tests JUnit 5
 ├── docs/                            ← sitio GitHub Pages (Jekyll)
 │   ├── index.md
-│   └── etapas/                      ← una página por etapa
+│   ├── etapas/                      ← 9 páginas de etapas
+│   ├── ejercicios/                  ← 3 ejercicios prácticos
+│   └── assets/                      ← CSS, JS, imágenes
+├── ejercicios/                      ← soluciones Java
 ├── .github/workflows/ci.yml         ← CI: build + tests
 └── _config.yml                      ← configuración Jekyll
 ```
@@ -77,19 +93,31 @@ mvn compile
 
 # Build completo con tests
 mvn clean verify
+
+# Ejecutar ejercicios
+mvn exec:java -Dexec.mainClass="poc.lambda.ejercicios.Ejercicio01"
 ```
 
 ---
 
 ## Tests
 
-14 tests unitarios con JUnit 5, organizados por clase:
+40+ tests unitarios con JUnit 5:
 
 ```bash
 mvn test
 ```
 
 Los reportes de Surefire quedan en `target/surefire-reports/`.
+
+---
+
+## Recursos adicionales
+
+- 🌐 [Sitio web del tutorial](https://cazucito.github.io/LambdaPath)
+- 📊 [Comparativas visuales](https://cazucito.github.io/LambdaPath/comparativas)
+- 💪 [Ejercicios prácticos](https://cazucito.github.io/LambdaPath/ejercicios/)
+- 💼 [Casos de uso reales](https://cazucito.github.io/LambdaPath/casos-de-uso)
 
 ---
 
